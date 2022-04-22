@@ -35,6 +35,10 @@ app.get('/user/:id',(req,res)=>{
 
 
 })
+
+app.get('/fruits',(req,res)=>{
+    res.send(["mang",'apple','orange']);
+})
 app.listen(port, () => {
   console.log('Listening to port ',port);
 })
