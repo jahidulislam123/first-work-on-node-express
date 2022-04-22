@@ -24,10 +24,13 @@ app.get('/users',(req,res)=>{
 });
 app.get('/user/:id',(req,res)=>{
     console.log(req.params);
-    const id =req.params.id;
+    // 3 ta equal dile parse int kore dite hobe
+    const id =parseInt(req.params.id);
     // const user=users[id];
     // eta onno vabe find diyeo kora jay 
-    const user =users.find(u=>u.id==id);
+    // const user =users.find(u=>u.id==id);
+    // 2 ta equal dile string hoy ami jodi 3 ta equal dei tahole amar int hoye jabe 
+    const user=users.find(u=>u.id===id);
     res.send(user);
 
 
